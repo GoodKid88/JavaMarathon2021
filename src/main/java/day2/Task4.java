@@ -14,6 +14,7 @@ public class Task4 {
         } else {
             y = 420;
         }
-        System.out.print(y);
+
+        System.out.println(y);
     }
 }

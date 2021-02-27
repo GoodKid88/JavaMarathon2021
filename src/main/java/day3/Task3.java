@@ -10,8 +10,7 @@ public class Task3 {
             double a = sc.nextDouble();
             double b = sc.nextDouble();
             if (b == 0) {
-                System.out.println("Деление на ноль");
-                i--;
+                System.out.println("Деление на 0");
             } else {
                 System.out.println(a / b);
             }

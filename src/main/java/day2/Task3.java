@@ -8,7 +8,7 @@ public class Task3 {
         int a = sc.nextInt();
         int b = sc.nextInt();
         if (a >= b) {
-            System.out.println("Неккоректный ввод");
+            System.out.println("Некорректный ввод");
         }
         while (a < b) {
             a++;

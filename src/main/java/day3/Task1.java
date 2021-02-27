@@ -8,7 +8,7 @@ public class Task1 {
 
         while (true) {
             String city = sc.next();
-            if (city.equals("Стоп")) {
+            if (city.equals("Stop")) {
                 break;
             }
             switch (city) {
@@ -32,6 +32,8 @@ public class Task1 {
                 case "Кельн":
                     System.out.println("Германия");
                     break;
+                default:
+                    System.out.println("Неизвестная страна");
             }
         }
     }
