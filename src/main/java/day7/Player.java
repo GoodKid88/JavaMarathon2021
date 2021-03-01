@@ -8,7 +8,7 @@ public class Player {
 
     public Player(int stamina) {
         this.stamina = stamina;
-        if (countPlayers >= 0 && countPlayers < 6) {
+        if (countPlayers < 6) {
             countPlayers++;
         }
     }
@@ -25,7 +25,7 @@ public class Player {
         if (stamina > 0) {
             System.out.println("Игрок бежит");
             stamina--;
-            if (stamina <= MIN_STAMINA) {
+            if (stamina <= 0) {
                 System.out.println("Игрок устал");
                 countPlayers--;
             }
