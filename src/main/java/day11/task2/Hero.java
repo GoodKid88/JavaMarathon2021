@@ -1,13 +1,13 @@
 package day11.task2;
 
 public abstract class Hero implements PhysAttack {
-    private int health;
-    private double physDef;
-    private double magicDef;
-    private int physAtt;
-    private int magicAtt;
-    final int HEALTH_LIMIT_LOW = 0;
-    final int HEALTH_LIMIT_HIGHT = 100;
+    int health;
+    double physDef;
+    double magicDef;
+    int physAtt;
+
+    final static int HEALTH_LIMIT_LOW = 0;
+    final static int HEALTH_LIMIT_HIGHT = 100;
 
     public Hero() {
         this.health = 100;
@@ -36,7 +36,6 @@ public abstract class Hero implements PhysAttack {
                 ", physDef=" + physDef +
                 ", magicDef=" + magicDef +
                 ", physAtt=" + physAtt +
-                ", magicAtt=" + magicAtt +
                 '}';
     }
 

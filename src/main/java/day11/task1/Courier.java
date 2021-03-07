@@ -1,17 +1,14 @@
 package day11.task1;
 
 public class Courier implements Worker {
-    private int oneOrderSalary = 100;
+    private final int ONE_ORDER_SALARY = 100;
     private int salary;
     private boolean isPayed;
     private Warehouse warehouse;
-    private int countDoWork;
-    private int bonus = 50000;
-    int countCouriers;
+    private final int BONUS = 50000;
 
     public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;
-        countCouriers++;
     }
 
     public int getSalary() {
@@ -28,16 +25,15 @@ public class Courier implements Worker {
 
     @Override
     public void doWork() {
-        countDoWork++;
-        salary += oneOrderSalary;
-        warehouse.setCountDeliveredOrders(countDoWork);
+        salary += ONE_ORDER_SALARY;
+        warehouse.incrementDeliveredOrders();
     }
 
     @Override
     public void bonus() {
         if (isPayed == false) {
             if (warehouse.getCountDeliveredOrders() >= 10000) {
-                salary += bonus / countCouriers;
+                salary += BONUS;
             } else {
                 System.out.println("Бонус пока не доступен");
             }
