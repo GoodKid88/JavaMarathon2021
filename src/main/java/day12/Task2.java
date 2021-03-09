@@ -15,7 +15,6 @@ public class Task2 {
                 arrayList.add(i);
             }
         }
-
         System.out.println(arrayList);
     }
 }

@@ -30,10 +30,7 @@ public class MusicBand {
     }
 
     public static void transferMembers(MusicBand bandA, MusicBand bandB) {
-        while (bandA.members.isEmpty() != true) {
-            int i = 0;
-            bandB.members.add(bandA.members.get(i));
-            bandA.members.remove(i);
-        }
+            bandB.members.addAll(bandA.members);
+            bandA.members.clear();
     }
 }
