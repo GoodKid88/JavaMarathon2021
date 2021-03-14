@@ -18,11 +18,7 @@ public class Task1 {
             String[] numbersString = line.split(" ");
 
             if (numbersString.length != 10) {
-                try {
-                    throw new ArrayIndexOutOfBoundsException();
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    System.out.println("Некорректный входной файл");
-                }
+                throw new ArrayIndexOutOfBoundsException();
             } else {
                 int sumDigits = 0;
 
@@ -34,6 +30,8 @@ public class Task1 {
             scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный входной файл");
         }
     }
 }

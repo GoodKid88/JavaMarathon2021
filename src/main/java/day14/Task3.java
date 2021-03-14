@@ -23,18 +23,16 @@ public class Task3 {
                 String[] pers = line.split(" ");
                 int i = Integer.parseInt(pers[1]);
                 if (i <= 0) {
-                    try {
-                        throw new Exception();
-                    } catch (Exception e) {
-                        System.out.println("Некорректный входной файл");
-                        return null;
-                    }
+                    throw new IllegalArgumentException();
                 }
                 person.add(new Person(pers[0], i));
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
             person = null;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный входной файл");
+            return null;
         }
         return person;
     }

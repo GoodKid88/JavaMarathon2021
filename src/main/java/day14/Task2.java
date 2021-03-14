@@ -21,22 +21,9 @@ public class Task2 {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] ageString = line.split(" ");
-                int age;
-
-                for (String str : ageString) {
-                    try {
-                        age = Integer.parseInt(str);
-                        if (age <= 0) {
-                            try {
-                                throw new Exception();
-                            } catch (Exception e) {
-                                System.out.println("Некорректный входной файл");
-                                return null;
-                            }
-                        }
-                    } catch (Exception e) {
-                        //действия не требуется
-                    }
+                int age = Integer.parseInt(ageString[1]);
+                if (age <= 0) {
+                    throw new IllegalArgumentException();
                 }
                 people.add(line);
             }
@@ -44,6 +31,9 @@ public class Task2 {
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
             people = null;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Некорректный входной файл");
+            return null;
         }
         return people;
     }
