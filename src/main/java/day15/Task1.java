@@ -3,6 +3,7 @@ package day15;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task1 {
@@ -24,12 +25,12 @@ public class Task1 {
                 String line = scanner.nextLine();
                 String[] lineArray = line.split(";");
                 if (lineArray[2].equals("0")) {
-                    printWriter.println(line);
+                    printWriter.println(lineArray[0] + "," + lineArray[1] + "," + lineArray[2]);
                 }
             }
             printWriter.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Файл не найден");
         }
     }
 }
