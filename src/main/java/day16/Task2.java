@@ -14,7 +14,7 @@ public class Task2 {
         try {
             PrintWriter printWriter = new PrintWriter(file1);
             int number;
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 1000; i++) {
                 number = (int) (Math.random() * 100);
                 printWriter.print(number + " ");
             }
@@ -24,11 +24,14 @@ public class Task2 {
             Scanner scanner = new Scanner(file1);
             String line = scanner.nextLine();
             String[] numbers = line.split(" ");
-            double sum;
-            double average;
-            for (int i = 0; i < numbers.length - 3; i += 4) {
-                sum = Integer.parseInt(numbers[i]) + Integer.parseInt(numbers[i + 1]) + Integer.parseInt(numbers[i + 2]) + Integer.parseInt(numbers[i + 3]);
-                average = sum / 4;
+
+            for (int i = 0; i < numbers.length - 19; i += 20) {
+                double average;
+                double sum = 0;
+                for (int j = i; j < i + 20; j++) {
+                    sum += Integer.parseInt(numbers[j]);
+                }
+                average = sum / 20;
                 printWriter.print(average + " ");
             }
             printWriter.close();
